@@ -585,7 +585,7 @@ module yCarriageAssemblyLeft() {
 	translate([0,0,openrail_plate_offset]) {
 
 		// plate and wheels
-		*rotate([0,0,180]) 
+		rotate([0,0,180]) 
 			openrail_plate20(wheels=true);
 	
 		// bracket

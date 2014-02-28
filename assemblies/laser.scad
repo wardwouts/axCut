@@ -5,14 +5,10 @@ fixedMirrorZOffset = openrail_plate_offset +
 
 laserTubeOffsetY = 45;
 
-
 module laserTube() {
 	color([1,1,1,0.4]) 
-		cylinder(r=50/2, h=700);
+		cylinder(r=50/2, h=laser_tube_length);
 }
-
-
-
 
 laserBracket_railCentres = frameCZ[3] - frameCZ[1] - 10;
 
@@ -269,8 +265,9 @@ module laserAssembly() {
 	
 	
 
-	translate([-350, frameCX[3]-laserTubeOffsetY,frameCZ[2] + fixedMirrorZOffset + laserMirror_width/2]) 
-		rotate([0,90,0]) 
+	// -350 voor 40W tube, -500 voor 50W
+	translate([-(laser_tube_length/2), frameCX[3]-laserTubeOffsetY,frameCZ[2] + fixedMirrorZOffset + laserMirror_width/2]) 
+		rotate([0,90,0])
 		laserTube();
 
 	end("laserAssembly");

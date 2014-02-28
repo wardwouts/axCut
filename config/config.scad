@@ -208,6 +208,8 @@ showSealingBelts = false;
 bedBearingOffset = 40;    // distance from centreline of front rail to centreline of rod
 bedMotorYOffset = 40;  // distance from centreline of front/back rails to centreline of motor
 
+laser_tube_length = 700; // 700 for 40W, 1000 for 50W, 1250 for 60W
+
 showLaserBeam = true;
 
 echo("Overall width = ", (frameCY[5]-frameCY[0]+16));

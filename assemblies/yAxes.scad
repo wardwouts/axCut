@@ -24,6 +24,7 @@ module yAxesAssembly() {
 	translate([0,yCarriagePos + 35,frameCZ[2] + openrail_groove_offset])
 		xAxisAssembly();
 	
+	assembly("yAxes");
 	
 	// y rails
 	for (i=[1,4]) {

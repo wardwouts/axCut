@@ -173,7 +173,7 @@ yVPos = 270;  // height of y axis - to centreline of 2040 profile
 
 rightW = 120;  // width of right casing, excludes outer panelling, runs from edge of bed margin
 leftW = rightW;
-backD = 150;  // depth of back casing
+backD = 190;  // depth of back casing
 frontD = 40;  // depth of front casing
 
 claddingC = 5;  // cladding clearance, inc thickness

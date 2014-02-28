@@ -13,9 +13,11 @@ module yAxesAssembly() {
 	beltIR = pulley_ir(T5x10_metal_pulley);
 
 	beltCX = [frameCY[4] +  w/2 + 2];
-	beltCY = [frameCX[0] + 40, 
-			  frameCX[3] - 40];
-	beltCZ = [frameCZ[2] - 16];
+	beltCY = [frameCX[0] + 23, 
+			  frameCX[3] - 70];
+	beltCZ = [frameCZ[2] + 13];
+	beltCXW = [frameCY[2] - 40];
+	beltCYW = [frameCX[0] + 23, frameCX[3] -97];
 	
 	
 	// xAxis
@@ -71,13 +73,20 @@ module yAxesAssembly() {
 	attach(con_yAxis_to_yIdler, yIdlerAssemblyConnectors[0]) 
 		yIdlerAssembly();
 		
-		
+	con_yAxis_to_yIdler_right = [[frameCY[4],frameCX[0]+15,frameCZ[2]], [0,1,0], 0];
+	
+	attach(con_yAxis_to_yIdler_right, yIdlerAssemblyConnectors[0]) 
+		yIdlerAssembly();
 	
 	// belts
-	*for (i=[0,1])
-		mirror([i,0,0]) 
-		translate([0,0,beltCZ[0] + 15])
-		belt(T5x10, beltCX[0], beltCY[0], beltIR , beltCX[0], beltCY[1], beltIR, gap = 0);
+	for (i=[0,1])
+		mirror([i,0,0])
+		translate([beltCXW[0],0,beltCZ[0] + 15])
+		rotate([0,90,0])
+		belt(T5x10, 0, beltCYW[0], beltIR , 0, beltCYW[1], beltIR, gap = 0);
+
+//		belt(T5x10, beltCX[0], beltCY[0], beltIR , beltCX[0], beltCY[1], beltIR, gap = 0);
+
 	
 	
 	

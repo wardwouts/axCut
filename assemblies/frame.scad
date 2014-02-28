@@ -137,7 +137,7 @@ module frameAssembly() {
 	}
 	
 	// z rib posts
-	*for (x=[2,3])
+	for (x=[2,3])
 		BR20x20WGBP([frameCY[x],frameCX[2],frameCZ[0]+20], 
 		            [frameCY[x],frameCX[2],frameCZ[1]-10],
 		            roll=0,

@@ -144,6 +144,13 @@ module frameAssembly() {
 		            startGussets=[1,0,0,0], 
 		            endGussets=[1,0,0,0]);
 	
+	// cable chain guide rib
+	for (i=[5])
+		BR20x20WGBP([frameCY[i],frameCX[0]+10,frameCZ[3]-120], 
+		            [frameCY[i],frameCX[3]-10,frameCZ[3]-120],
+		            roll=0,
+		            startGussets=[1,0,0,0], 
+		            endGussets=[1,0,0,0]);
 
 	// lid front; 1mm speling aan iedere kant
 	BR20x20WGBP([frameCY[2]+11,frameCX[0],frameCZ[4]], 

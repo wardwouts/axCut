@@ -16,7 +16,7 @@ debugConnectors = true;  //  show "attach" points
 
 // Real-world colors for various parts & vitamins
 use_realistic_colors = true;    // true for "real" colors, false for "distinct" colors (useful during design and for build instructions)
-printed_plastic_color = "orange";
+printed_plastic_color = "red";
 cable_strip_real_color = "fuchsia";
 belt_real_color = "yellow";
 bulldog_real_color ="black";

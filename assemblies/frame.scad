@@ -79,7 +79,14 @@ module frameAssembly() {
 		            roll=90,
 		            startGussets=[0,1,0,1,0,0], 
 		            endGussets=[0,1,0,1,0,0]);
-		            
+
+	// top front
+	BR20x20WGBP([frameCY[2]+10,frameCX[0],frameCZ[4]-20], 
+		            [frameCY[3]-10,frameCX[0],frameCZ[4]-20],
+		            roll=0,
+		            startGussets=[0,0,0,1], 
+		            endGussets=[0,0,0,1]);
+	
 	// mid back
 	BR20x20WGBP([frameCY[2]+10,frameCX[3],frameCZ[1]], 
 		            [frameCY[3]-10,frameCX[3],frameCZ[1]],
@@ -137,7 +144,32 @@ module frameAssembly() {
 		            startGussets=[1,0,0,0], 
 		            endGussets=[1,0,0,0]);
 	
+
+	// lid front; 1mm speling aan iedere kant
+	BR20x20WGBP([frameCY[2]+11,frameCX[0],frameCZ[4]], 
+		            [frameCY[3]-11,frameCX[0],frameCZ[4]],
+		            roll=0,
+		            startGussets=[0,0,0,0], 
+		            endGussets=[0,0,0,0]);
+	// lid back
+	BR20x20WGBP([frameCY[2]+11,frameCX[2]-20,frameCZ[4]], 
+		            [frameCY[3]-11,frameCX[2]-20,frameCZ[4]],
+		            roll=90,
+		            startGussets=[0,0,0,0], 
+		            endGussets=[0,0,0,0]);
+	// lid sides
+	BR20x20WGBP([frameCY[2]+21,frameCX[0]+10,frameCZ[4]], 
+		    [frameCY[2]+21,frameCX[2]-30,frameCZ[4]],
+		    roll=0,
+		    startGussets=[0,0,0,1], 
+		    endGussets=[0,0,0,1]);
+	BR20x20WGBP([frameCY[3]-21,frameCX[0]+10,frameCZ[4]], 
+		    [frameCY[3]-21,frameCX[2]-30,frameCZ[4]],
+		    roll=0,
+		    startGussets=[0,1,0,0], 
+		    endGussets=[0,1,0,0]);
 	
+
+
 	end("frame");
-	
 }

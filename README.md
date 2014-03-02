@@ -12,4 +12,4 @@ Latest WIP image(s):
 
 ![wip image](https://raw.github.com/Axford/axCut/master/images/axCut_wip7a.png)
 
-![wip image](https://raw.github.com/Axford/axCut/master/images/axCut_wip7b.png)
+![wip image](https://raw.github.com/wardwouts/axCut/master/images/WaxCut_2.png)

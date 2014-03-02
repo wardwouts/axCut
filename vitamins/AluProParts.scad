@@ -326,6 +326,7 @@ module 20x40HeavyGusset_stl(screws=false) {
 	sloth = slotw * 1.5;
 	nib = 1;   // depth of nib
 	nibw = 5.8;  // width of nib
+	radius=1;
 	
 	vitamin("20x40HeavyGusset:");
 	
@@ -336,7 +337,24 @@ module 20x40HeavyGusset_stl(screws=false) {
 		// ends
 		for (i=[0,1])
 			mirror([0,-i,i])
-			linear_extrude(t) {
+				difference(){
+					union(){
+						translate([-w/2,0,0]){
+							translate([0,0,radius]) cube([w,w,t] - [0,0,radius]);
+							translate([0,radius,0]) cube([w,w,t] - [0,2*radius,0]);
+							translate([0,radius,radius]) rotate([0,90,0]) cylinder(r=radius, h=w, $fn=80);
+							translate([0,w-radius,radius]) rotate([0,90,0]) cylinder(r=radius, h=w, $fn=80);
+						}
+					}
+					linear_extrude(t) {
+						// slots for screw, 20mm centres
+						for (j=[0,1],k=[0,1])
+							translate([-10 + j*w/2 - slotw/2, 9 + k*20, 0]) 
+							square([slotw,sloth]);
+					}
+				}
+	
+			*linear_extrude(t) {
 				difference() {
 					translate([-w/2,0,0]) square([w,w]);
 					
@@ -349,8 +367,12 @@ module 20x40HeavyGusset_stl(screws=false) {
 			
 		// nibs - must add these at some point!
 		if (!simplify)
-			for (i=[0,1],j=[0,1],k=[0,1])
-			mirror([0,-i,i])
+			for (k=[0,1]){
+				// close the top nibs
+				translate([(-nibw/2) -10 + k*20,0,0]) cube([nibw,radius,radius]);
+			}
+			for (i=[0,1],j=[0],k=[0,1])
+			mirror([0,-i,i]){
 			rotate([0,-90,0])
 			translate([j*(w-2*nib),0,-10 + k*20 -nibw/2])
 			linear_extrude(nibw)
@@ -358,6 +380,11 @@ module 20x40HeavyGusset_stl(screws=false) {
 			         [2*nib,0],
 			         [nib,-nib],
 			         [-nib,-nib]]);
+			for (k=[0,1]){
+				// and add bottom ones
+				translate([(-nibw/2) -10 + k*20,w-2*nib-radius,-nib]) cube([nibw,2*nib,nib]);
+			}
+			}
 		
 		//sides and inner rib
 		for (i=[0:2])

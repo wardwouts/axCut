@@ -247,6 +247,7 @@ module 20x20PrintedGusset_stl(screws=false,nibs=true) {
 	sloto = tg[4];
 	nib = tg[5];
 	nibw = tg[6];
+	radius=1;
 	
 	vitamin("20x20PrintedGusset");
 	
@@ -257,19 +258,26 @@ module 20x20PrintedGusset_stl(screws=false,nibs=true) {
 		// ends
 		for (i=[0,1])
 			mirror([0,-i,i])
-			linear_extrude(t) {
 				difference() {
-					translate([-w/2,0,0]) square([w,w]);
-					
-					// slot for screw
-					translate([(-slotw/2),sloto,0]) square([slotw,sloth]);
+					union(){
+						translate([-w/2,0,0]){
+							translate([0,0,radius]) cube([w,w,t] - [0,0,radius]);
+							translate([0,radius,0]) cube([w,w,t] - [0,2*radius,0]);
+							translate([0,radius,radius]) rotate([0,90,0]) cylinder(r=radius, h=w, $fn=80);
+							translate([0,w-radius,radius]) rotate([0,90,0]) cylinder(r=radius, h=w, $fn=80);
+						}
+					}
+					linear_extrude(t) {
+						// slot for screw
+						translate([(-slotw/2),sloto,0]) square([slotw,sloth]);
+					}
 				}
-			}
 			
 		// nibs
 		if (nibs && !simplify)
-			for (i=[0,1],j=[0,1])
-			mirror([0,-i,i])
+			translate([-nibw/2,0,0]) cube([nibw,radius,radius]);
+			for (i=[0,1],j=[0])
+			mirror([0,-i,i]){
 			rotate([0,-90,0])
 			translate([j*(w-2*nib),0,-nibw/2])
 			linear_extrude(nibw)
@@ -277,6 +285,8 @@ module 20x20PrintedGusset_stl(screws=false,nibs=true) {
 			         [2*nib,eta],
 			         [nib,-nib],
 			         [-nib,-nib]]);
+			translate([-nibw/2,w-2*nib-radius,-nib]) cube([nibw,2*nib,nib]);
+			}
 		
 		//sides
 		for (i=[0,1])

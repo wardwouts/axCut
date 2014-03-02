@@ -1,0 +1,25 @@
+yAxes:
+Vitamins:
+  4 20x20TGusset:
+  2 Aluminium Extrusion BR_20x20 910mm
+  8 Aluminium Extrusion Twist Nut
+  2 Belt T5 x 10mm x 1665mm
+  4 M4 cap screw x 10mm
+  4 M4 cap screw x 8mm
+ 30 M5 low profile screw x 10mm
+  2 NEMA17 x 47mm stepper motor
+  4 Openrail750:Openrail 750mm
+ 30 OpenrailTeeNut:
+  8 M3 pan screw x 8mm
+  2 T2.5x18 pulley 18 teeth
+  8 Washer M3 x 7mm x 0.5mm
+  8 Washer M4 x 9mm x 0.8mm
+  8 Star washer M3 x 0.5mm
+  1 laserMirror:
+
+Printed:
+  1 fixedMirrorHolder.stl
+
+Sub-assemblies:
+  1 cladding
+  2 y_idler_assemblies

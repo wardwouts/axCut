@@ -2,16 +2,19 @@ frame:
 Vitamins:
   8 20x20TGusset:
   8 20x40HeavyGusset:
-  8 Aluminium Extrusion BR_20x20 350mm
-  6 Aluminium Extrusion BR_20x20 870mm
-  3 Aluminium Extrusion BR_20x20 990mm
+  2 Aluminium Extrusion BR_20x20 210mm
+  8 Aluminium Extrusion BR_20x20 370mm
+  2 Aluminium Extrusion BR_20x20 765mm
+  7 Aluminium Extrusion BR_20x20 910mm
+  2 Aluminium Extrusion BR_20x20 988mm
+  4 Aluminium Extrusion BR_20x20 990mm
   2 Aluminium Extrusion BR_20x40 1200mm
-  6 Aluminium Extrusion BR_20x40 870mm
+  6 Aluminium Extrusion BR_20x40 910mm
   1 Aluminium Extrusion BR_20x40 990mm
-180 Aluminium Extrusion Twist Nut
- 40 BR20x20Gusset
-180 M4 cap screw x 8mm
- 36 Washer M4 x 9mm x 0.8mm
+172 Aluminium Extrusion Twist Nut
+ 52 BR20x20Gusset
+172 M4 cap screw x 8mm
+  4 Washer M4 x 9mm x 0.8mm
 
 Printed:
 
